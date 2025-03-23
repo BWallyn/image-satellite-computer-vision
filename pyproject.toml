@@ -16,6 +16,7 @@ dependencies = [
  "kedro-viz>=6.7.0",
  "scikit-learn~=1.5.1",
  "seaborn~=0.12.1",
+ "sentinelsat>=1.2.1",
 ]
 
 [project.scripts]
@@ -60,5 +61,9 @@ dev = [
     "pytest>=8.3.5",
     "pytest-cov>=6.0.0",
     "pytest-mock>=3.14.0",
+    "pyyaml>=6.0.2",
     "ruff>=0.11.0",
 ]
+
+[tool.kedro_telemetry]
+project_id = "2416c4b472d74cc1abb880ea3c29113d"

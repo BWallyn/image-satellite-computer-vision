@@ -7,13 +7,20 @@ requires-python = ">=3.9"
 name = "image_satellite_computer_vision"
 readme = "README.md"
 dynamic = [ "version",]
-dependencies = [ "ipython>=8.10", "jupyterlab>=3.0", "notebook", "kedro[jupyter]~=0.19.10", "kedro-datasets[pandas-csvdataset, pandas-exceldataset, pandas-parquetdataset, plotly-plotlydataset, plotly-jsondataset, matplotlib-matplotlibwriter]>=3.0", "kedro-viz>=6.7.0", "scikit-learn~=1.5.1", "seaborn~=0.12.1",]
+dependencies = [
+ "ipython>=8.10",
+ "jupyterlab>=3.0",
+ "notebook",
+ "kedro[jupyter]~=0.19.10",
+ "kedro-datasets[pandas-csvdataset, pandas-exceldataset, pandas-parquetdataset, plotly-plotlydataset, plotly-jsondataset, matplotlib-matplotlibwriter]>=3.0",
+ "kedro-viz>=6.7.0",
+ "scikit-learn~=1.5.1",
+ "seaborn~=0.12.1",
+ "sentinelsat>=1.2.1",
+]
 
 [project.scripts]
 image-satellite-computer-vision = "image_satellite_computer_vision.__main__:main"
-
-[project.optional-dependencies]
-dev = [ "pytest-cov~=3.0", "pytest-mock>=1.7.1, <2.0", "pytest~=7.2", "ruff~=0.1.8",]
 
 [tool.kedro]
 package_name = "image_satellite_computer_vision"
@@ -48,3 +55,15 @@ attr = "image_satellite_computer_vision.__version__"
 [tool.setuptools.packages.find]
 where = [ "src",]
 namespaces = false
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.5",
+    "pytest-cov>=6.0.0",
+    "pytest-mock>=3.14.0",
+    "pyyaml>=6.0.2",
+    "ruff>=0.11.0",
+]
+
+[tool.kedro_telemetry]
+project_id = "2416c4b472d74cc1abb880ea3c29113d"
